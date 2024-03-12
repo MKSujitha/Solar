@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="./static/cs.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/20c5629a29.js" crossorigin="anonymous"></script>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+</head>
+
+<body style="padding-top: 5vh; padding-bottom: 5vh; background-color: #417C9A ;background-repeat: no-repeat;background-size: cover;">
+   
+    
+    <div class="user-info">
+        <h1 >User Details</h1>
+        <form id="myForm" action="/user" method="POST"> 
+        <div class="det">
+            <label  for="name">Name : </label>
+            <input  type="text" id="name" name="name">
+        </div>
+        <div class="det">
+            <label for="address">Address : </label>
+            <textarea id="address" style="border-radius: 4px;border: 2px solid black; width: 50vw; height: 100px;" name="address"></textarea>
+        </div>
+        <div class="det">
+            <label for="entity">Entity : </label>
+            <select id="entity" name="entity" class="form-select" aria-label="Entity selection">
+                <option selected disabled>Select entity</option>
+                <option value="Average Household">Average Household</option>
+                <option value="Rural Household">Rural Household</option>
+                <option value="Residential Building">Residential Building</option>
+                <option value="Small Business">Small Business</option>
+            </select>
+        </div>
+        
+        <div class="det">
+            <label for="fans">Number of fans:</label>
+            <input type="text" id="fans" class="form-control"  name="fans" placeholder="Enter number of fans in your house">
+        </div>
+        
+        <div class="det">
+            <label for="lights">Number of lights:</label>
+            <input type="text" id="lights" class="form-control" name="lights" placeholder="Enter number of lights in your house">
+        </div>
+        
+        <div class="det">
+            <label for="fridges">Number of fridges:</label>
+            <input type="text" id="fridges" class="form-control" name="fridges" placeholder="Enter number of fridges in your house" >
+        </div>
+        
+        <div class="det">
+            <label for="airCoolers">Number of Air Coolers:</label>
+            <input type="text" id="airCoolers" class="form-control" name="airCoolers" placeholder="Enter number of air coolers in your house">
+        </div>
+        
+        <div class="det">
+            <label for="acs">Number of ACs:</label>
+            <input type="text" id="acs" class="form-control" name="acs" placeholder="Enter number of ACs in your house" >
+        </div>
+        
+        <div class="det">
+            <label for="tvs">Number of TVs:</label>
+            <input type="text" id="tvs" class="form-control" name="tvs" placeholder="Enter number of TVs in your house">
+        </div>
+        
+        <div class="det">
+            <label for="ovens">Number of ovens:</label>
+            <input type="text" id="ovens" class="form-control" name="ovens" placeholder="Enter number of ovens in your house" >
+        </div>
+        
+        <div class="det" style="display: flex; align-items: center;">
+            <label for="washingMachine" >Number of Washing Machines:</label>
+            <input type="text" id="washingMachine" class="form-control" name="washingMachine" placeholder="Enter number of washing machines">
+        </div>
+        
+        
+        <div class="det">
+            <label for="averageBill">Average current bill:</label>
+            <div class="range-container">
+                <input type="range" class="form-range" min="1000" max="5000" id="averageBill" name="averageBill">
+                <div class="range-values">
+                    <span>Min: 1000</span>
+                    <span>Max: 5000</span>
+                </div>
+                <p>Current value: <span id="billValueDisplay">0</span></p>
+            </div>
+        </div>
+
+        <button type="submit" style="width: 60vw;" class="btn btn-primary">Submit</button>
+    </form>    
+        
+      
+    </div>    
+
+    
+    
+</body>
+
+</html>
