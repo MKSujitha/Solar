@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,10 +19,6 @@
 </head>
 
 <body>
-   
-
-
-
 
 
     <div class="input-block"> 
@@ -108,24 +103,24 @@
     
 
   <script>
-    document.getElementById("userInput").innerHTML=address;
-    var acc = document.getElementsByClassName("accordion");
-    var i;
+    // document.getElementById("userInput").innerHTML=address;
+    // var acc = document.getElementsByClassName("accordion");
+    // var i;
 
-    for (i = 0; i < acc.length; i++) {
-      acc[i].addEventListener("click", function () {
-        this.classList.toggle("active");
-        this.parentElement.classList.toggle("active");
+    // for (i = 0; i < acc.length; i++) {
+    //   acc[i].addEventListener("click", function () {
+    //     this.classList.toggle("active");
+    //     this.parentElement.classList.toggle("active");
 
-        var pannel = this.nextElementSibling;
+    //     var pannel = this.nextElementSibling;
 
-        if (pannel.style.display === "block") {
-          pannel.style.display = "none";
-        } else {
-          pannel.style.display = "block";
-        }
-      });
-    }
+    //     if (pannel.style.display === "block") {
+    //       pannel.style.display = "none";
+    //     } else {
+    //       pannel.style.display = "block";
+    //     }
+    //   });
+    // }
 
     const selectImage = document.querySelector('.select-image');
 const inputFile = document.querySelector('#file');
