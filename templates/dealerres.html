@@ -9,27 +9,25 @@
     <!-- Custom CSS -->
     <style>
         body, html {
-            color: white;
             height: 100%;
+            color: white;
             background-image: url('https://img.freepik.com/free-photo/solar-power-station-surrounded-by-trees_181624-21279.jpg?t=st=1710752064~exp=1710755664~hmac=aacc78bf7faa69124ccc613ac72b0f0c5d259cf2d171cb389a7369a6a1e0711b&w=900');
             background-repeat: no-repeat;
             background-size: cover;
         }
 
-        .sub
-        {
-            border-radius:10px ;
-            font-size: 24px;
-            background-color: rgb(209, 198, 181);
-            border: transparent;
-        }
-         
-        
         .center-container {
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100%;
+        }
+        .table
+        {
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            color: white;
         }
 
         .input-container {
@@ -57,19 +55,56 @@
             flex: 1;
         }
 
-        
+        /* Set table width to 100% */
+        table {
+            width: 100%;
+        }
+
+        .sub
+        {
+            border-radius:10px ;
+            font-size: 24px;
+            background-color: rgb(209, 198, 181);
+            border: transparent;
+        }
+         
     </style>
 </head>
 <body>
-    <div class="center-container">
+    <div class="center-container" style="display: flex; flex-direction: column;justify-content: space-around; ">
         <div class="input-container">
             <form id="myForm" action="/dealer" method="post">
                 <div class="form-group">
-                    <label for="address" style="font-size: 28px; font-weight: 600; text-align: center;">Please give me your address </label>
+                    <label for="address" style="font-size: 28px; font-weight: 600; text-align: center;" >Please give me your address </label>
                     <textarea style="opacity: 0.8;" class="form-control" name="address" id="address" rows="5" ></textarea>
                 </div>
-                <div style="text-align: center;"><button  type="submit" class="btn btn-primary sub">Submit</button></div>
+                <div style="text-align: center;"><button  type="submit" class="btn btn-primary sub" >Submit</button></div>
             </form>
+        </div>
+        <div>
+            <h2 style="text-align: center;">Nearby Customers</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Address</th>
+                        <th>Phone Number</th>
+                        <th>Energy Consumption</th>
+                        <th>Distance (km)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for user in nearest_users %}
+                    <tr>
+                        <td>{{ user.name }}</td>
+                        <td>{{ user.address }}</td>
+                        <td>{{ user.phone_number }}</td>
+                        <td>{{ user.energy_consumption }}</td>
+                        <td>{{ user.distance }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
         </div>
     </div>
     
